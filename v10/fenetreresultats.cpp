@@ -17,6 +17,7 @@ fenetreResultats::~fenetreResultats()
 
 void fenetreResultats::afficherResultats(QString Utilisateur)
 {
+
     QStringList header; // nom des colonnes
     header << "Horodatage" << "Nom du Joueur" << "Score du joueur" << "Nom de l'opposant" << "Score de l'opposant" ;
     ui->tResultats->setColumnCount(header.size());
@@ -26,20 +27,29 @@ void fenetreResultats::afficherResultats(QString Utilisateur)
     ui->tResultats->verticalHeader()->setHidden(true);
 
     QHeaderView * headerView = ui->tResultats->horizontalHeader();
-    // on redimensionne automatiquement la colonne pour occuper l'espacedisponible
+    // on redimensionne automatiquement la colonne pour occuper l'espace disponible
     headerView->setSectionResizeMode(QHeaderView::Stretch);
 
 
      QSqlQuery recupMeilleurScores;
      recupMeilleurScores.exec("SELECT Horodatage , NomJoueur , ScoreJoueur , NomMachine , ScoreMachine , (ScoreJoueur - ScoreMachine ) as score FROM Resultats WHERE Utilisateur='"+ Utilisateur +"' ORDER BY score DESC LIMIT 10 ");
+     /* Recupere les 10 meilleurs scores ( difference entre ScoreJoueur et ScoreMachine ) dans la base de données de l'Utilisateur */
 
-     for(int i = 0; recupMeilleurScores.next(); i++){
+
+     for(int i = 0; recupMeilleurScores.next(); i++)
+         /* Tant qu'il reste des enregistrements */
+     {
+        // Insertion de chaque attribut dans chaque colonne
      QTableWidgetItem *Horodatage = new QTableWidgetItem(QString(recupMeilleurScores.value(0).toString()));
      QTableWidgetItem *NomJoueur = new QTableWidgetItem(QString(recupMeilleurScores.value(1).toString()));
      QTableWidgetItem *ScoreJoueur = new QTableWidgetItem(QString(recupMeilleurScores.value(2).toString()));
      QTableWidgetItem *NomMachine = new QTableWidgetItem(QString(recupMeilleurScores.value(3).toString()));
      QTableWidgetItem *ScoreMachine = new QTableWidgetItem(QString(recupMeilleurScores.value(4).toString()));
      ui->tResultats->insertRow(i);
+
+
+     /* i -> chaque ligne
+     Insertion de chaque enregistrement dans sa colonne dédiée */
      ui->tResultats->setItem(i,0 , Horodatage);
      ui->tResultats->setItem(i,1 , NomJoueur);
      ui->tResultats->setItem(i,2 , ScoreJoueur);

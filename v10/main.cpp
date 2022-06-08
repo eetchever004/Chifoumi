@@ -22,7 +22,6 @@ int main(int argc, char *argv[])
     p->setModele(m);
     p->setVue(&v);
     p->connexion();
-    //fConnexion->exec();
-    //v.show();
+
     return a.exec();
 }

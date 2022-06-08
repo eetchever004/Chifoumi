@@ -16,7 +16,7 @@ public:
     ~fenetreResultats();
 
 public:
-    void afficherResultats(QString Utilisateur);
+    void afficherResultats(QString Utilisateur);   // Selectionne les 10 meillleurs resultats du joueur pour les afficher dans un tableau
 
 private:
     Ui::fenetreResultats *ui;

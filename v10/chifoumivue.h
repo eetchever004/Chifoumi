@@ -23,9 +23,9 @@ public:
 
     // Ordres que la Présentation donne à la vue
     void afficherValeursJeu(unsigned int sJ,
-                           unsigned int sM,
-                           Chifoumi::UnCoup cJ,
-                           Chifoumi::UnCoup cM);
+                            unsigned int sM,
+                            Chifoumi::UnCoup cJ,
+                            Chifoumi::UnCoup cM);
 
     void afficherParametres(unsigned int limite, QString nom);
 
@@ -41,10 +41,9 @@ private slots:
     void choixPierre();
     void choixCiseaux();
     void choixPapier();
-    void parametrer();
-    // Ouvre le MsgBox du menu à propos
-    void ouvrirAPropos();
-    void ouvrirResultats();
+    void parametrer();        // Ouvre la fenêtre parametrer
+    void ouvrirAPropos();     // Ouvre le MsgBox du menu à propos
+    void ouvrirResultats();   // Ouvre la fenêtre résultat
 
 
 private:
