@@ -112,7 +112,7 @@ QString ChifoumiVue::nomImageDuCpoup(Chifoumi::UnCoup c)
 void ChifoumiVue::ouvrirAPropos()
 {
     QMessageBox *APropos = new QMessageBox;
-    APropos -> setText(" Version : 10.0 \n Date de création : 05/06/2022 \n Auteurs : Etcheverry Eliott - Gouaud Romain - Labastie Esteban ");
+    APropos -> setText(" Version : 8.0 \n Date de création : 05/06/2022 \n Auteurs : Etcheverry Eliott - Gouaud Romain - Labastie Esteban ");
     APropos -> setWindowTitle("A propos de cette application");
     APropos -> show();
 }
