@@ -22,12 +22,12 @@ public:
     void finDePartie(unsigned int limite);
 
 public slots:
-    void nouvellePartie();
+    void nouvellePartie();    // Permet d'initialiser le jeu pour lancer une nouvelle Partie
     void choixPierre();
     void choixCiseaux();
     void choixPapier();
-    void parametrer();
-   // void choixFigure(Chifoumi::UnCoup c);
+    void parametrer();    // Permet d'afficher une fenêtre dans laquelle l'utilisateur peut modifier les paramètres de la partie
+ 
 
 private:
     Chifoumi* chifoumiModele;
