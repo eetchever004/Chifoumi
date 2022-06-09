@@ -116,7 +116,7 @@ void ChifoumiVue::ouvrirAPropos()
 {
     // Créé une fenêtre QMessageBox -> l'initialise -> l'affiche
     QMessageBox *APropos = new QMessageBox;
-    APropos -> setText(" Version : 10.0 \n Date de création : 05/06/2022 \n Auteurs : Etcheverry Eliott - Gouaud Romain - Labastie Esteban ");
+    APropos -> setText(" Version : 9.0 \n Date de création : 05/06/2022 \n Auteurs : Etcheverry Eliott - Gouaud Romain - Labastie Esteban ");
     APropos -> setWindowTitle("A propos de cette application");
     APropos -> show();
 }
