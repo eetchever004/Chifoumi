@@ -41,9 +41,9 @@ private slots:
     void choixPierre();
     void choixCiseaux();
     void choixPapier();
-    void parametrer();
-    // Ouvre le MsgBox du menu à propos
-    void ouvrirAPropos();
+    void parametrer();   // Ouvre la fenêtre parametrer
+    void ouvrirAPropos(); // Ouvre le MsgBox du menu à propos
+    
 
 
 private:
