@@ -49,7 +49,7 @@ void fenetreResultats::afficherResultats(QString Utilisateur)
 
 
      /* i -> chaque ligne
-     Insertion de chaque enregistrement dans sa colonne dédiée */
+     Insertion de chaque  enregistrement dans sa colonne dédiée et a la ligne i */
      ui->tResultats->setItem(i,0 , Horodatage);
      ui->tResultats->setItem(i,1 , NomJoueur);
      ui->tResultats->setItem(i,2 , ScoreJoueur);
