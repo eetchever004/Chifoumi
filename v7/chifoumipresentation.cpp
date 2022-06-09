@@ -59,19 +59,24 @@ void ChifoumiPresentation::finDePartie(unsigned int limite)
     }
     case enCours:
     {
+        // Creation de la fenêtre de fin de partie de type MessageBox Information
         QMessageBox *fenetreFin = new QMessageBox;
         fenetreFin->setWindowTitle("Fin de partie");
         fenetreFin->setIcon(QMessageBox::Information);
         QString strLimite;
         strLimite.setNum(limite);
+        
+        // Texte adapté pour scénario joueur gagnant
         if (getModele()->getScoreJoueur()==getModele()->getLimite())
         {
             fenetreFin->setText(" Bravo " + getModele()->getNom() + " ! Vous gagnez avec " + strLimite + " points.");
-            fenetreFin->show();
-            setEtat(initial);
-            getVue()->griserElements();
+            
+            fenetreFin->show();           // On affiche la fenêtre
+            setEtat(initial);             // Retour à l'état initial car fin de partie
+            getVue()->griserElements();   // On désactive les boutons
         }
-
+        
+        // Texte adapté pour scénario Machine gagnante
         else if (getModele()->getScoreMachine()==getModele()->getLimite())
         {
             fenetreFin->setText(" Bravo Machine ! Vous gagnez avec " + strLimite + " points.");
@@ -199,6 +204,7 @@ void ChifoumiPresentation::parametrer()
     {
     case initial:
     {
+        // Création fenêtre de parametrage
         FenetreParametrage *Parametrage = new FenetreParametrage;
         Parametrage->setWindowTitle("Paramètres");
         Parametrage->afficherParametres(getModele()->getNom(), getModele()->getLimite());
@@ -206,18 +212,20 @@ void ChifoumiPresentation::parametrer()
 
         if(confirmation == QDialog::Accepted )
         {
-
+            
+             //  On recupere le Nom si le contenu de getNom (SNom)  non nul
             if (Parametrage->getNom()!="")
             {
                 getModele()->setNom(Parametrage->getNom());
             }
-
+             //  On recupere la Limite si le contenu de getLimite (SLimite)  non nul
             if (Parametrage->getLimite()!=0)
             {
                 QString strLimite;
                 strLimite.setNum(getModele()->getLimite());
                 getModele()->setLimite(Parametrage->getLimite());
             }
+            //On met a jour les labels sur l'interface de parametrage
             getVue()->afficherParametres(getModele()->getLimite(),
                                          getModele()->getNom());
 
@@ -243,6 +251,7 @@ void ChifoumiPresentation::connexion()
         fenetreConnexion *fConnexion = new fenetreConnexion();
         fConnexion->setWindowTitle("Se Connecter");
         fConnexion->exec();
+        //Si la connexion est réussi (getConnexion -> true) -> on recupere l'identifiant -> on ouvre la fenêtre de jeu
         if(fConnexion->getConnexion())
         {
             getModele()->setIdentifiant(fConnexion->getIdentifiant());
