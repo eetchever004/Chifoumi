@@ -21,11 +21,11 @@ public:
     void setEtat(UnEtat e);
 
 public slots:
-    void nouvellePartie();
+    void nouvellePartie();   // Permet d'initialiser les informations pour lancer une nouvelle  partie
     void choixPierre();
     void choixCiseaux();
     void choixPapier();
-   // void choixFigure(Chifoumi::UnCoup c);
+   
 
 private:
     Chifoumi* chifoumiModele;
