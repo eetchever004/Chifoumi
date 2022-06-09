@@ -10,14 +10,15 @@ ChifoumiVue::ChifoumiVue(QWidget *parent)
     , ui(new Ui::ChifoumiVue)
 {
     ui->setupUi(this);
+        //Connexion des boutons de jeu
     connect(ui->bPierre,SIGNAL (clicked()), this, SLOT(choixPierre()));
     connect(ui->bPapier,SIGNAL (clicked()), this, SLOT(choixPapier()));
     connect(ui->bCiseaux,SIGNAL (clicked()), this, SLOT(choixCiseaux()));
     connect(ui->bNouv,SIGNAL (clicked()),this,SLOT(nouvellePartie()));
 
+        //Connexion des actions du menu
     connect(ui->actionQuitter,SIGNAL (triggered()),this,SLOT(close()));
     connect(ui->actionA_propos_de,SIGNAL (triggered()),this,SLOT(ouvrirAPropos()));
-
     connect(ui->actionParametrer,SIGNAL (triggered()),this,SLOT(parametrer()));
 }
 
@@ -110,6 +111,7 @@ QString ChifoumiVue::nomImageDuCpoup(Chifoumi::UnCoup c)
 
 void ChifoumiVue::ouvrirAPropos()
 {
+    // Créé une fenêtre QMessageBox -> l'initialise -> l'affiche
     QMessageBox *APropos = new QMessageBox;
     APropos -> setText(" Version : 6.0 \n Date de création : 28/05/2022 \n Auteurs : Etcheverry Eliott - Gouaud Romain - Labastie Esteban ");
     APropos -> setWindowTitle("A propos de cette application");
@@ -147,7 +149,7 @@ void ChifoumiVue::choixPapier(){
 
 void ChifoumiVue::parametrer()
 {
-    chifoumiPresentation->parametrer();
+    chifoumiPresentation->parametrer();  //Appel  de la fonction procédure paramétrer présent dans la présentation
 }
 
 void ChifoumiVue::choixCiseaux(){
