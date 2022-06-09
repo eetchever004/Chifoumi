@@ -50,7 +50,13 @@ bool Database::insertUtilisateur(QString Identifiant, QString Mdp)
     if (Identifiant!="" && Mdp!="")
     {
         QSqlQuery query;
-        if (query.exec("INSERT INTO Authentification VALUES ('" + Identifiant + "' , '" + Mdp + "')"))   {
+        if (query.exec("INSERT INTO Authentification VALUES ('" + Identifiant + "' , '" + Mdp + "')"))
+        {
+            // Affichage d'une fenêtre de confirmation de création du compte
+            QMessageBox *compteCree = new QMessageBox;
+            compteCree -> setText(" Votre compte a été créé !");
+            compteCree -> setWindowTitle("Creation d'un compte");
+            compteCree -> show();
             return true;
         }
         return false;
