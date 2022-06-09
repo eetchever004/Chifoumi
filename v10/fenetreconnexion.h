@@ -18,8 +18,8 @@ public:
     ~fenetreConnexion();
 
 public:
-    QString getIdentifiant();    // Recupere l'Identifiant saisi dans SIdentifiant
-    QString getMdp();            // Recupere le mot de passe saisi dans SMdp
+    QString getIdentifiant();    // Retourne l'Identifiant saisi dans SIdentifiant
+    QString getMdp();            // Retourne le mot de passe saisi dans SMdp
 
 public slots:
     bool getConnexion();

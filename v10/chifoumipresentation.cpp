@@ -283,7 +283,7 @@ void ChifoumiPresentation::sauvegarderResultat()
 {
     QSqlQuery recupResultat;
     recupResultat.prepare("INSERT INTO Resultats VALUES (?,?,?,?,?,?)");
-    QString Horodatage = QDateTime::currentDateTime().toString("dd/MM hh:mm");
+    QString Horodatage = QDateTime::currentDateTime().toString("dd/MM hh:mm"); //Recuperer l'horodatage de la machine
 
     recupResultat.addBindValue(getModele()->getIdentifiant());
     recupResultat.addBindValue(Horodatage);

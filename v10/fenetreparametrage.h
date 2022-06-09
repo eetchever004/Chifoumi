@@ -16,8 +16,8 @@ public:
     ~FenetreParametrage();
 
 public:
-    QString getNom();                     // Recupere le nom indiqué dans SNom
-    int getLimite();                      // Recupere la limite indiquée  dans SLimite
+    QString getNom();                     // Retourne le nom indiqué dans SNom
+    int getLimite();                      // Retourne la limite indiquée  dans SLimite
     void afficherParametres(QString nom , int limite);  // Initialise les labels de Nom et Limite sur la fenêtre de paramètres
 
 private:
