@@ -27,7 +27,7 @@ public:
                            Chifoumi::UnCoup cJ,
                            Chifoumi::UnCoup cM);
 
-    void majElementsInteractifs(ChifoumiPresentation::UnEtat e);
+    void majElementsInteractifs(ChifoumiPresentation::UnEtat e);       // Met à jour les élements de la vue selon l'etat
 
 
     // slots qui réagissent aux événements de l'utilisateur
