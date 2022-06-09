@@ -18,13 +18,13 @@ public:
     ~fenetreConnexion();
 
 public:
-    QString getIdentifiant();
-    QString getMdp();
+    QString getIdentifiant();        // Retourne l'Identifiant saisi dans SIdentifiant
+    QString getMdp();                // Retourne le mot de passe saisi dans SMdp
 
 public slots:
-    bool getConnexion();
-    void creerCompte();
-    bool quitterJeu();
+    bool getConnexion();             // Retourne true si la connexion est effectuée
+    void creerCompte();             // Creer un compte
+    
 private:
     Ui::fenetreConnexion *ui;
     Database *db;
