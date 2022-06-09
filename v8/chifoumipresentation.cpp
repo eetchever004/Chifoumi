@@ -2,7 +2,7 @@
 #include "chifoumivue.h"
 #include "fenetreparametrage.h"
 #include "fenetreconnexion.h"
-#include "fenetreresultats.h"
+
 
 #include <QDebug>
 #include <QMessageBox>
