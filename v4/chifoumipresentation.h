@@ -19,14 +19,16 @@ public:
     void setVue(ChifoumiVue* v);
     UnEtat getEtat();
     void setEtat(UnEtat e);
-    void finDePartie(unsigned int limite);
+    
+    void finDePartie(unsigned int limite);  /* Si limite atteinte -> arrete la partie (UnEtat enCours -> initial)
+                       et affiche le message de fin adapté */
 
 public slots:
-    void nouvellePartie();
+    void nouvellePartie();   // Permet d'initialiser les informations pour lancer une nouvelle  partie
     void choixPierre();
     void choixCiseaux();
     void choixPapier();
-   // void choixFigure(Chifoumi::UnCoup c);
+   
 
 private:
     Chifoumi* chifoumiModele;
