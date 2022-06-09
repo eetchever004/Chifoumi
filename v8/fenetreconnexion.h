@@ -2,8 +2,8 @@
 #define FENETRECONNEXION_H
 
 #include <QDialog>
-
 #include "database.h"
+
 
 namespace Ui {
 class fenetreConnexion;
@@ -18,13 +18,12 @@ public:
     ~fenetreConnexion();
 
 public:
-    QString getIdentifiant();
-    QString getMdp();
+    QString getIdentifiant();    // Retourne l'Identifiant saisi dans SIdentifiant
+    QString getMdp();            // Retourne le mot de passe saisi dans SMdp
 
 public slots:
     bool getConnexion();
     void creerCompte();
-    bool quitterJeu();
 private:
     Ui::fenetreConnexion *ui;
     Database *db;
