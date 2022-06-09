@@ -4,9 +4,10 @@ Projet de BUT S2 IUT de Bayonne 2021/2022
 
 Application de jeu Chifoumi développée sur Qt c++
 
-v1 - Chifoumi basique 
-v2 - Modele MVP
-v3 - ajout d'une fenêtre A propos de
+v0 - Chifoumi console
+v1 - Chifoumi graphique
+v2 - Modele MVP sur v1
+v3 - ajout d'une fenêtre A propos de + menu
 v4 - ajout d'une limite de score 
 v6 - ajout d'une fenêtre de parametrage (Nom du joueur et limite de score)
 
