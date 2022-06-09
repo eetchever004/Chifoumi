@@ -52,18 +52,23 @@ void ChifoumiPresentation::finDePartie(unsigned int limite)
     }
     case enCours:
     {
+        // Creation de la fenêtre de fin de partie de type MessageBox Information
         QMessageBox *fenetreFin = new QMessageBox;
         fenetreFin->setWindowTitle("Fin de partie");
+        fenetreFin->setIcon(QMessageBox::Information);
+        
         QString strLimite;
         strLimite.setNum(limite);
+        // Texte adapté pour scénario joueur gagnant
         if (getModele()->getScoreJoueur()==getModele()->getLimite())
         {
             fenetreFin->setText(" Bravo " + getModele()->getNom() + " ! Vous gagnez avec " + strLimite + " points.");
-            fenetreFin->show();
-            setEtat(initial);
-            getVue()->griserElements();
+            fenetreFin->show();       // On affiche la fenêtre
+            setEtat(initial);          // Retour à l'état initial car fin de partie
+            getVue()->griserElements();   // On désactive les boutons
         }
 
+         // Texte adapté pour scénario Machine gagnante
         else if (getModele()->getScoreMachine()==getModele()->getLimite())
         {
             fenetreFin->setText(" Bravo Machine ! Vous gagnez avec " + strLimite + " points.");
