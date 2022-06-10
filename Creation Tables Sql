@@ -1,1 +1,23 @@
+// Script Sql permettant la creation des tables Sql necessaires à l'application chifoumi v7 +
 
+
+Création des tables :
+---
+table Authentification :
+
+CREATE TABLE Authentification (
+Utilisateur varchar(30) PRIMARY KEY,
+Mdp varchar(30)
+);
+
+
+table Resultats :
+
+CREATE TABLE Resultats (
+Utilisateur varchar(30),
+Horodatage varchar(30),
+NomJoueur varchar(30),
+ScoreJoueur int(4),
+NomMachine varchar(30),
+ScoreMachine int(4)
+);
